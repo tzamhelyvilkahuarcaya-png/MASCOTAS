@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth; 
+}
+
+html {
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: Tahoma, Geneva, sans-serif;
+}
+
+header {
+    width: 100%;
+    height: 80px;
+    background: #8b4513;
+    color: #fff; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+header .contenedor {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    position: relative;
+}
+
+header h1 {
+    float: left;
+    line-height: 80px;
+    font-size: 25px;
+}
+
+/* Ocultamos el checkbox */
+#menu-bar {
+    display: none;
+}
+
+/* Botón hamburguesa visible por defecto */
+header label.icon-menu {
+    float: right;
+    font-size: 35px;
+    line-height: 80px;
+    cursor: pointer;
+    display: block;
+}
+
+/* MENÚ MÓVIL: Forzamos que cobre todo el ancho y tenga el color de fondo exacto */
+header .menu {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background-color: #8b4513;
+    display: none; 
+    flex-direction: column;
+}
+
+header .menu a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 18px 25px;
+    font-size: 18px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: left;
+    background-color: #8b4513; /* Color de fondo sólido para cada enlace incluyendo Contacto */
+}
+
+header .menu a:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+main {
+    padding-top: 80px;
+}
+
+section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+/* MODO COMPUTADORA (Pantallas mayores a 1024px) */
+@media (min-width: 1024px) {
+    header label.icon-menu {
+        display: none !important; 
+    }
+
+    header .menu {
+        position: static !important;
+        display: flex !important; 
+        flex-direction: row !important;
+        float: right;
+        background: transparent !important;
+        width: auto !important;
+    }
+
+    header .menu a {
+        line-height: 50px;
+        font-size: 16px;
+        margin-top: 15px;
+        border-bottom: none;
+        padding: 0 15px;
+        background: transparent !important;
+    }
+}
